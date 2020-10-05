@@ -13,6 +13,7 @@ const gfx = [
         id: 3,
         name:" Gigabyte Radeon RX 570 Gaming 8GB GDDR5 (GV-RX570GAMING-8GD) ",
         price:759
+
     },
 
 ]
@@ -21,17 +22,20 @@ const gfx = [
            {
           id: 1,
          name:"Gigabyte B450 AORUS ELITE",
-         price:409
+         price:409,
+           socket:"AM4"
            },
            {
           id: 2,
           name: "Gigabyte X570 GAMING X",
-          price: 769
+          price: 769,
+               socket:"AM4"
            },
            {
           id: 3,
           name: "Gigabyte GA-A320M-S2H" ,
-          price: 239
+          price: 239,
+               socket:"AM4"
            },
 ]
 const cpu = [
@@ -39,17 +43,20 @@ const cpu = [
     {
         id: 1,
         name:" AMD Ryzen )",
-        price:929
+        price:929,
+        socket:"AM4"
     },
     {
         id: 2,
         name: "Intel Core i5-9400F, 2.9GHz, 9 MB, BOX (BX80684I59400F)",
-        price: 599
+        price: 599,
+        socket:"1151 (Coffee Lake)"
     },
     {
         id: 3,
         name: " Intel Pentium Gold G5400, 3.7GHz, 4 MB, BOX (BX80684G5400)",
-        price: 249
+        price: 249,
+        socket:"1151 (Coffee Lake)"
     },
 ]
 

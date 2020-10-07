@@ -59,7 +59,20 @@ const cpu = [
         socket:"1151 (Coffee Lake)"
     },
 ]
-
+cart = [
+    {
+        name:"mainbord",
+        price: 0,
+    },
+    {
+        name:"graphic card",
+        price: 0,
+    },
+    {
+        name:"processor",
+        price: 0,
+    },
+]
 
 
 
@@ -83,19 +96,25 @@ function SelectedItemValue(SelectId){
     let strAtt = selectedItem.options[selectedItem.selectedIndex].getAttribute('value');
     console.log("Wybrany element ma ID:"+strAtt);
 
-    const summaryCPU=document.getElementById("summaryCPU")
+    const summaryCpu=document.getElementById("summaryCpu")
     const summaryMb=document.getElementById("summaryMb")
     const summaryGfx=document.getElementById("summaryGfx")
 
 
-     if (selectedItem == "cpu")
-    summaryCPU.innerHTML = cpu[strAtt-1].name
-    else if (selectedItem == "mb")
-     summaryCPU.innerHTML = mb[strAtt-1].name
+     if (selectedItem == "cpu"){
+        summaryCpu.innerHTML = "<td>"+cpu[strAtt-1].name + "</td><td>" + cpu[strAtt - 1].price+ "</td>"
+        cart[2].price = cpu[strAtt - 1].price
+        cart[2].price = cpu[strAtt - 1].name
+     }
+    else if (selectedItem == "mb"){
+     summaryMb.innerHTML = "<td>"+mb[strAtt-1].name + "</td><td>" + mb[strAtt - 1].price+ "</td>"
+         cart[1].price = mb[strAtt - 1].price
+         cart[1].price = mb[strAtt - 1].name
+}
      else if (selectedItem == "gfx")
-     summaryCPU.innerHTML = gfx[strAtt-1].name
-    {}
-
+     summaryGfx.innerHTML = "<td>"+gfx[strAtt-1].name + "</td><td>"+gfx[strAtt - 1].price+ "</td>"
+        cart[0].price = gfx[strAtt - 1].price
+        cart[0].price = gfx[strAtt - 1].name
     //return(parseInt(strAtt));
 }
 

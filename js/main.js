@@ -114,27 +114,29 @@ function SelectedItemValue(SelectId) {
     const summaryCpu = document.getElementById("summaryCpu")
     const summaryMb = document.getElementById("summaryMb")
     const summaryGfx = document.getElementById("summaryGfx")
-    summaryCpu.innerHTML="Kot ma Ale"
 
-    if (selectedItem == "cpu") {
+
+    if (SelectId == "cpu") {
         summaryCpu.innerHTML = "<td>" + cpu[strAtt - 1].name + "</td><td>" + cpu[strAtt - 1].price + "</td>"
         cart[2].price = cpu[strAtt - 1].price
         cart[2].name = cpu[strAtt - 1].name
-    } else if (selectedItem == "mb") {
+        console.log("Cena cpu:" + cart[2].price)
+    } else if (SelectId == "mb") {
         summaryMb.innerHTML = "<td>" + mb[strAtt - 1].name + "</td><td>" + mb[strAtt - 1].price + "</td>"
         cart[1].name = mb[strAtt - 1].name
         cart[1].price = mb[strAtt - 1].price
-        console.log("Cena mb:"+cart[1].price)
-    } else if (selectedItem == "gpu") {
+        console.log("Cena mb:" + cart[1].price)
+    } else if (SelectId == "gpu") {
         summaryGfx.innerHTML = "<td>" + gfx[strAtt - 1].name + "</td><td>" + gfx[strAtt - 1].price + "</td>"
         summaryMainbord = gfx[strAtt - 1].price
         cart[0].name = gfx[strAtt - 1].name
-        return(parseInt(strAtt));
-    } else {
+        console.log("Cena gpu:" + cart[0].price)
+        return (parseInt(strAtt));
     }
+    document.getElementById("summaryMainbord").innerHTML="Suma:"+(cart[0].price+cart[1].price+cart[2].price)
 }
 
-document.getElementById("summaryMainbord").innerHTML="Suma:"+(cart[0].price+cart[1].price+cart[2].price)
+
 
 
 

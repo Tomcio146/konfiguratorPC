@@ -13,7 +13,6 @@ const gfx = [
         id: 3,
         name:" Gigabyte Radeon RX 570 Gaming 8GB GDDR5 (GV-RX570GAMING-8GD) ",
         price:759
-
     },
 
 ]
@@ -39,7 +38,6 @@ const gfx = [
            },
 ]
 const cpu = [
-
     {
         id: 1,
         name:" AMD Ryzen )",
@@ -59,6 +57,57 @@ const cpu = [
         socket:"1151 (Coffee Lake)"
     },
 ]
+const zasilacz = [
+    {
+        id: 1,
+        name:"SilentiumPC Vero M3 600W (SPC268)",
+        price:259,
+    },
+    {
+        id: 2,
+        name: "be quiet! SYSTEM POWER 9 500W (BN246)",
+        price: 237,
+    },
+    {
+        id: 3,
+        name: "SilentiumPC Vero L3 500W (SPC265)" ,
+        price: 209,
+    },
+]
+const obudowa = [
+    {
+        id: 1,
+        name:"SilentiumPC Signum SG7V Evo TG ARGB (SPC250)",
+        price:389,
+    },
+    {
+        id: 2,
+        name: " Fractal Design Meshify C TG (FD-CA-MESH-C-BKO-TG)",
+        price: 409,
+    },
+    {
+        id: 3,
+        name: "MSI MAG Forge 100M" ,
+        price: 209,
+    },
+    ]
+const fotel = [
+    {
+        id: 1,
+        name:"SilentiumPC Signum SG7V Evo TG ARGB (SPC250)",
+        price:389,
+    },
+    {
+        id: 2,
+        name: " Fractal Design Meshify C TG (FD-CA-MESH-C-BKO-TG)",
+        price: 409,
+    },
+    {
+        id: 3,
+        name: "MSI MAG Forge 100M" ,
+        price: 209,
+    },
+]
 cart = [
     {
         name:"mainbord",
@@ -70,6 +119,18 @@ cart = [
     },
     {
         name:"processor",
+        price: 0,
+    },
+    {
+        name:"zasilacz",
+        price: 0,
+    },
+    {
+        name:"obudowa",
+        price: 0,
+    },
+    {
+        name:"fotel",
         price: 0,
     },
 ]
@@ -114,26 +175,50 @@ function SelectedItemValue(SelectId) {
     const summaryCpu = document.getElementById("summaryCpu")
     const summaryMb = document.getElementById("summaryMb")
     const summaryGfx = document.getElementById("summaryGfx")
-
+    const summaryZasilacz = document.getElementById("summaryZasilacz")
+    const summaryObudowa = document.getElementById("summaryObudowa")
+    const summaryFotel = document.getElementById("summaryFotel")
 
     if (SelectId == "cpu") {
         summaryCpu.innerHTML = "<td>" + cpu[strAtt - 1].name + "</td><td>" + cpu[strAtt - 1].price + "</td>"
         cart[2].price = cpu[strAtt - 1].price
         cart[2].name = cpu[strAtt - 1].name
         console.log("Cena cpu:" + cart[2].price)
+
     } else if (SelectId == "mb") {
         summaryMb.innerHTML = "<td>" + mb[strAtt - 1].name + "</td><td>" + mb[strAtt - 1].price + "</td>"
         cart[1].name = mb[strAtt - 1].name
         cart[1].price = mb[strAtt - 1].price
         console.log("Cena mb:" + cart[1].price)
+
     } else if (SelectId == "gpu") {
         summaryGfx.innerHTML = "<td>" + gfx[strAtt - 1].name + "</td><td>" + gfx[strAtt - 1].price + "</td>"
-        summaryMainbord = gfx[strAtt - 1].price
+        cart[0] = gfx[strAtt - 1].price
         cart[0].name = gfx[strAtt - 1].name
         console.log("Cena gpu:" + cart[0].price)
-        return (parseInt(strAtt));
+
     }
-    document.getElementById("summaryMainbord").innerHTML="Suma:"+(cart[0].price+cart[1].price+cart[2].price)
+    else if (SelectId == "zasilacz") {
+        summaryZasilacz.innerHTML = "<td>" + zasilacz[strAtt - 1].name + "</td><td>" + zasilacz[strAtt - 1].price + "</td>"
+       cart[3]= zasilacz[strAtt - 1].price
+        cart[3].name = zasilacz[strAtt - 1].name
+        console.log("Cena zasilacza:" + cart[3].price)
+
+    }
+    else if (SelectId == "obudowa") {
+        summaryObudowa.innerHTML = "<td>" + obudowa[strAtt - 1].name + "</td><td>" + obudowa[strAtt - 1].price + "</td>"
+        cart[4]= obudowa[strAtt - 1].price
+        cart[4].name = obudowa[strAtt - 1].name
+        console.log("Cena obudowy:" + cart[4].price)
+
+    }
+    else if (SelectId == "fotel") {
+        summaryFotel.innerHTML = "<td>" + fotel[strAtt - 1].name + "</td><td>" + fotel[strAtt - 1].price + "</td>"
+        cart[5]= fotel[strAtt - 1].price
+        cart[5].name = fotel[strAtt - 1].name
+        console.log("Cena fotel:" + cart[5].price)
+
+    }
 }
 
 
@@ -154,4 +239,17 @@ for (let i=0;i<gfx.length; i++) {
 
 for (let i=0;i<cpu.length;i++) {
     addOpt("cpu",cpu[i].id, cpu[i].name)
+}
+
+
+for (let i=0;i<zasilacz.length;i++) {
+    addOpt("zasilacz",zasilacz[i].id, zasilacz[i].name)
+}
+
+
+for (let i=0;i<obudowa.length;i++) {
+    addOpt("obudowa",obudowa[i].id, obudowa[i].name)
+}
+for (let i=0;i<fotel.length;i++) {
+    addOpt( "fotel",fotel[i].id, fotel[i].name)
 }

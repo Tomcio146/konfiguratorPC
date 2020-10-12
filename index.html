@@ -32,8 +32,31 @@
             <select name="gpu" id="gpu" onchange="SelectedItemValue('gpu')">
 
             </select>
-            </td>
+        </td>
            </tr>
+          <tr>
+              <td>Zasilacz</td>
+              <td>
+                  <select name="zasilacz" id="zasilacz" onchange="SelectedItemValue('zasilacz')">
+
+                  </select>
+              </td>
+          </tr>
+          <tr>
+              <td>Obudowa</td>
+              <td>
+                  <select name="obudowa" id="obudowa" onchange="SelectedItemValue('obudowa')">
+
+                  </select>
+              </td>
+          </tr>
+          <td>Fotel</td>
+          <td>
+              <select name="fotel" id="fotel" onchange="SelectedItemValue('fotel')">
+
+              </select>
+          </td>
+          </tr>
         </table>
     </section>
 
@@ -41,12 +64,13 @@
         <tr id="summaryCpu"></tr>
         <tr id="summaryMb"></tr>
          <tr id="summaryGfx"></tr>
+        <tr id="summaryZasilacz"></tr>
+        <tr id="summaryObudowa"></tr>
+        <tr id="summaryFotel"></tr>
     </table>
 
     <div id="summaryMainbord"></div>
     <div id="sumAll"></div>
-
-
 
 </main>
 <script src="js/main.js"></script>
